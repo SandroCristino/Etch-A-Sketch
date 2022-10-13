@@ -13,6 +13,7 @@
     <script>
         const divs = document.querySelector('#container');
         const button = document.createElement('button');
+        const color = ['green','blue','yellow','white','brown','purple','lila','lightblue','grey','black'];
 
         function createSquare(amount) {
             while (amount > 0) {
@@ -20,17 +21,18 @@
                 div.classList.add('square');
                 div.setAttribute('style', 'width:100px; height:100px; background:black');
                 divs.appendChild(div);
-                div.addEventListener('mouseover', () => {
-                    div.style.background = 'green';
+                div.addEventListener('mouseover', (e) => {
+                    const random = Math.round(Math.random() * 10 - 1);
+                    div.style.background = color[random];
                 })
                 amount--;
             }
         }
 
+ 
 
         createSquare(16);
         divs.setAttribute('style', 'display:flex; flex-wrap:wrap; gap:20px');
-
 
 
     </script>
