@@ -4,12 +4,14 @@ style:
 
 function createSquare(amount) {
     nehme alle divs in NodeList und entferne sie anschließend
-    so lange kleine gleich amount {
-        erstelle div
-        maße 16x16
-        zum container hinzufügen
-        
-    }        
+    
+
+        while (amount > 0) {
+            erstelle div
+            maße 16x16
+            zum container hinzufügen
+        }    
+       
 }
 
     divs quereySelectorAll('div')

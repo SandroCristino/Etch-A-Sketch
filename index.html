@@ -14,28 +14,30 @@
     <script>
         const button = document.createElement('button');
         const container = document.querySelector('#container');
-        const color = ['green','blue','yellow','white','brown','purple','lila','lightblue','grey','black'];
+        const color = ['green','blue','yellow','white','brown','purple','lila','lightblue','grey','magenta'];
 
         container.appendChild(button);
 
-        createSquare(16);
+        createSquare(2);
         
-        container.setAttribute('style', 'display:flex; flex-wrap:wrap; gap:20px; justify-content: center');
-        button.setAttribute('style', 'display:block; flex:0 1 100%; margin: 0 42%; height: 33px;  font-size: 20px; border-radius:10px');
+
+        // container.setAttribute('style', 'display:flex; flex-wrap:wrap; justify-content: center');
+        // button.setAttribute('style', 'display:block; flex:0 1 100%; margin: 0 42%; height: 33px;  font-size: 20px; border-radius:10px');
+        button.setAttribute('style', 'grid-area:header; height: 33px; margin: 20px; font-size: 20px; border-radius:10px; grid-column-start: 1; grid-column-end: 17;')
         button.textContent = '👀 Change it 👀';
         button.addEventListener('click', () => {
-            let input = prompt('How many square do you want?');
+            let input = prompt('How many rows do you want?');
             createSquare(input);
         })
 
         function createSquare(amount) {
-            
             document.querySelectorAll('p').forEach((elem) => elem.remove());
 
-                while (amount > 0) {
+            for (;amount > 0; amount--) {
+                for (let i = 16; i > 0; i--) {
                 const div = document.createElement('p');
                 div.classList.add('square');
-                div.setAttribute('style', 'width:100px; height:100px; background:black; margin: 0');
+                div.setAttribute('style', 'width:50px; height:50px; background:white; margin: 0;border:solid 3px black');
 
                 
 
@@ -44,7 +46,7 @@
                     const random = Math.round(Math.random() * 10 - 1);
                     div.style.background = color[random];
                 })
-                amount--;
+                }
             }
         }
 
