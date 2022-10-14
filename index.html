@@ -40,6 +40,9 @@
                 createSquare(input);
             }
         })
+        resetBtn.addEventListener('click', () => {
+            document.querySelectorAll('p').forEach((elem) => elem.style.background = 'white');
+        });
 
         function createSquare(amount) {
             document.querySelectorAll('p').forEach((elem) => elem.remove());
