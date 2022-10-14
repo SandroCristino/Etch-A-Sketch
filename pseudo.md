@@ -5,13 +5,16 @@ style:
 function createSquare(amount) {
     nehme alle divs in NodeList und entferne sie anschließend
     
-
+    for (let i = amount; i > 0; i--) {
+        erstelle columnContainer
+        display: flex
+        
         while (amount > 0) {
             erstelle div
             maße 16x16
-            zum container hinzufügen
+            zum colmunContainer hinzufügen
         }    
-       
+    }    
 }
 
     divs quereySelectorAll('div')

@@ -2,16 +2,30 @@
 #container {
     size: 100%;
     max-width: 1100px;
-    margin: 0 auto;  
-    grid-template-areas: "header header";
+    height: 750px;
+    margin: 0 auto;
+    grid-template-areas: 
+    "header header header header header header header header header header header header header header header "
+    "sidebar sidebar content content content content content content content content content content content right  right"
+    "sidebar sidebar content content content content content content content content content content content right  right"
+    "sidebar sidebar content content content content content content content content content content content right  right"
+    "sidebar sidebar content content content content content content content content content content content right  right"
+    "sidebar sidebar content content content content content content content content content content content right  right"
+    "sidebar sidebar content content content content content content content content content content content right  right"
+    "sidebar sidebar content content content content content content content content content content content right  right"
+    "sidebar sidebar content content content content content content content content content content content right  right"
+    "sidebar sidebar content content content content content content content content content content content right  right"
+    "sidebar sidebar content content content content content content content content content content content right  right"
+    "sidebar sidebar content content content content content content content content content content content right  right"
+    "sidebar sidebar content content content content content content content content content content content right  right";
+
+
     display:grid;
-    grid-template-columns: repeat(16,50px);
+    grid-template-columns: repeat(15,50px);
 
     justify-content: center;
-    align-content: center;
-    grid-gap:0;
 
-    border: solid 1px green;
+    align-content: center;
 
     background-color: aliceblue;
     border-radius: 20px;
@@ -20,4 +34,15 @@
 
 body {
     background-color: lightskyblue;
+}
+
+h1 {
+    text-align: center;
+    background-color: lightpink;
+    margin: 10px auto;
+    padding: 3px;
+    max-width: 1100px;
+    border-radius: 20px;
+    font-family:  'Brush Script MT', cursive;
+    font-size: 50px;
 }

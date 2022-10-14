@@ -6,40 +6,49 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <h1>Etch-A-Sketch</h1>
+
     </head>
     <body>
         <div id="container"></div>
-        
     </body>
     <script>
-        const button = document.createElement('button');
+        const buildBtn = document.createElement('button');
         const container = document.querySelector('#container');
         const color = ['green','blue','yellow','white','brown','purple','lila','lightblue','grey','magenta'];
+        const resetBtn = document.createElement('button');
+        const createBtn = document.createElement('button');
 
-        container.appendChild(button);
+        container.appendChild(resetBtn);
+        container.appendChild(buildBtn);
+        container.appendChild(createBtn);
 
         createSquare(2);
         
-
-        // container.setAttribute('style', 'display:flex; flex-wrap:wrap; justify-content: center');
-        // button.setAttribute('style', 'display:block; flex:0 1 100%; margin: 0 42%; height: 33px;  font-size: 20px; border-radius:10px');
-        button.setAttribute('style', 'grid-area:header; height: 33px; margin: 20px; font-size: 20px; border-radius:10px; grid-column-start: 1; grid-column-end: 17;')
-        button.textContent = '👀 Change it 👀';
-        button.addEventListener('click', () => {
+        createBtn.setAttribute('style', 'grid-area: right;  width: 50px; height: 33px; margin: 50% 25%; border-radius: 10px;');
+        createBtn.textContent = 'Build';
+        resetBtn.setAttribute('style', 'grid-area: sidebar; width: 50px; height: 33px; margin: 50% 25%; border-radius: 10px;');
+        resetBtn.textContent = 'Reset';
+        buildBtn.setAttribute('style', 'grid-area: header; height: 33px; margin: 20px 0; font-size: 20px; border-radius:10px');
+        buildBtn.textContent = '👀 Change it 👀';
+        buildBtn.addEventListener('click', () => {
             let input = prompt('How many rows do you want?');
-            createSquare(input);
+            if (input > 11) {
+                window.alert('Highest one is 11.');
+                createSquare(11);
+            } else {
+                createSquare(input);
+            }
         })
 
         function createSquare(amount) {
             document.querySelectorAll('p').forEach((elem) => elem.remove());
 
             for (;amount > 0; amount--) {
-                for (let i = 16; i > 0; i--) {
+                for (let i = 11; i > 0; i--) {
                 const div = document.createElement('p');
                 div.classList.add('square');
-                div.setAttribute('style', 'width:50px; height:50px; background:white; margin: 0;border:solid 3px black');
-
-                
+                div.setAttribute('style', 'width:50px; height:50px; background:white; margin: 0;border:solid 1px black;');
 
                 container.appendChild(div);
                 div.addEventListener('mouseover', (e) => {
@@ -48,6 +57,7 @@
                 })
                 }
             }
+
         }
 
     </script>
