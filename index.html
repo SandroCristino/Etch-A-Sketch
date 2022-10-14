@@ -9,18 +9,22 @@
     </head>
     <body>
         <div id="container"></div>
+        
     </body>
     <script>
-        const divs = document.querySelector('#container');
         const button = document.createElement('button');
+        const container = document.querySelector('#container');
+        // const body = document.querySelector()
         const color = ['green','blue','yellow','white','brown','purple','lila','lightblue','grey','black'];
+
+        container.appendChild(button);
 
         function createSquare(amount) {
             while (amount > 0) {
                 const div = document.createElement('div');
                 div.classList.add('square');
                 div.setAttribute('style', 'width:100px; height:100px; background:black');
-                divs.appendChild(div);
+                container.appendChild(div);
                 div.addEventListener('mouseover', (e) => {
                     const random = Math.round(Math.random() * 10 - 1);
                     div.style.background = color[random];
@@ -29,10 +33,12 @@
             }
         }
 
- 
-
         createSquare(16);
-        divs.setAttribute('style', 'display:flex; flex-wrap:wrap; gap:20px');
+
+        
+        container.setAttribute('style', 'display:flex; flex-wrap:wrap; gap:20px; justify-content: center;align-content: center;');
+
+        button.setAttribute('style', 'display:block; flex:0 1 100%')
 
 
     </script>
