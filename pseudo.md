@@ -3,6 +3,7 @@ create container in html
 style:
 
 function createSquare(amount) {
+    nehme alle divs in NodeList und entferne sie anschließend
     so lange kleine gleich amount {
         erstelle div
         maße 16x16
