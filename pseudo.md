@@ -18,6 +18,7 @@ function createSquare(amount) {
         EventListener('mouseover', () => {
             change background color
         })
+        
 
 createSquaer(16);
 
