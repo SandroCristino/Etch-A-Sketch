@@ -12,12 +12,17 @@
     <body>
         <div id="container"></div>
     </body>
+    <footer>          
+        <!-- <div onclick="location.href='newurl.html';">&nbsp;</div> -->
+        <div onclick="window.open('https://github.com/SandyWezzy/Etch-A-Sketch','mywindow');" style="cursor: pointer;" >Website made by SandyWezzy</div>
+    </footer>
     <script>
         const buildBtn = document.createElement('button');
         const container = document.querySelector('#container');
         const color = ['green','blue','yellow','white','brown','purple','lila','lightblue','grey','magenta'];
         const resetBtn = document.createElement('button');
         const createBtn = document.createElement('button');
+        const footer = document.querySelector('#footer');
 
         container.appendChild(resetBtn);
         container.appendChild(buildBtn);
@@ -48,6 +53,7 @@
             document.querySelectorAll('p').forEach((elem) => elem.style.background = color[getRandom()]);
         })
 
+
         function createSquare(amount) {
             document.querySelectorAll('p').forEach((elem) => elem.remove());
 
@@ -58,17 +64,17 @@
                 div.setAttribute('style', 'width:50px; height:50px; background:white; margin: 0;border:solid 1px black;');
 
                 container.appendChild(div);
-                div.addEventListener('mouseover', (e) => {
+                div.addEventListener('mouseover', () => {
                     div.style.background = color[getRandom()];
-                })
+                });
                 }
             }
 
         }
-
-        const getRandom = function () {
+        const getRandom = function() {
             return Math.round(Math.random() * 10 - 1);
         }
         
+
         </script>
 </html>
