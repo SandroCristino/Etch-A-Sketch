@@ -31,6 +31,7 @@
         resetBtn.textContent = 'Reset';
         buildBtn.setAttribute('style', 'grid-area: header; height: 33px; margin: 20px 0; font-size: 20px; border-radius:10px');
         buildBtn.textContent = '👀 Change it 👀';
+       
         buildBtn.addEventListener('click', () => {
             let input = prompt('How many rows do you want?');
             if (input > 11) {
@@ -43,6 +44,9 @@
         resetBtn.addEventListener('click', () => {
             document.querySelectorAll('p').forEach((elem) => elem.style.background = 'white');
         });
+        createBtn.addEventListener('click', () => {
+            document.querySelectorAll('p').forEach((elem) => elem.style.background = color[getRandom()]);
+        })
 
         function createSquare(amount) {
             document.querySelectorAll('p').forEach((elem) => elem.remove());
@@ -55,13 +59,16 @@
 
                 container.appendChild(div);
                 div.addEventListener('mouseover', (e) => {
-                    const random = Math.round(Math.random() * 10 - 1);
-                    div.style.background = color[random];
+                    div.style.background = color[getRandom()];
                 })
                 }
             }
 
         }
 
-    </script>
+        const getRandom = function () {
+            return Math.round(Math.random() * 10 - 1);
+        }
+        
+        </script>
 </html>
